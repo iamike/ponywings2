@@ -151,3 +151,5 @@ var canvas;
 var ctx;
 var hudCanvas;
 var hudCTX;
+var mouthCanvas;
+var mouthCTX;

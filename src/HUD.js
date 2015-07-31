@@ -18,6 +18,8 @@ HUD.draw = function(){
 	
 	hudCTX.clearRect(0, 0, 960, 640); // Clear the canvas
 	
+	//console.log(HUD.timer);
+
 	// Draw Night
 	if(HUD.timer<0.2){
 		hudCTX.save();
@@ -34,38 +36,37 @@ HUD.draw = function(){
 	// Draw Outer Circle
 	hudCTX.fillStyle = "#333";
 	hudCTX.beginPath();
-	//hudCTX.arc(0,300,60,0,Math.PI*2,false);
+	hudCTX.arc(480,0,60,0,Math.PI*2,false);
 	hudCTX.fill();
 		
 	// Draw Sun & Moon
 	hudCTX.save();
-	//hudCTX.translate(0,300);
-	//hudCTX.rotate((1-HUD.timer)*0.5*Math.PI);
+	hudCTX.translate(480,0);
+	hudCTX.rotate((1-HUD.timer)*0.5*Math.PI);
 	//hudCTX.rotate((1-HUD.timer)*0.5*Math.PI);
 
-	//hudCTX.drawImage( HUD.timerImage, 0, 0, 100, 100 );
-	hudCTX.drawImage( HUD.timerImageUp, -70, 0, 100, 100 );
-	hudCTX.drawImage( HUD.timerImageDown, -70, 230, 100, 100 );
+	hudCTX.drawImage( HUD.timerImage, -50, -50, 100, 100 );
+	// hudCTX.drawImage( HUD.timerImageUp, -70, 0, 100, 100 );
+	// hudCTX.drawImage( HUD.timerImageDown, -70, 230, 100, 100 );
 
 	hudCTX.restore();
 	
-
-
-
 
 	// Draw Mouth
 		
 	// Draw Arc
 	if(HUD.awesome>=0){
 		hudCTX.beginPath();
-		hudCTX.arc(0,300,55,0,-HUD.awesome*0.5*Math.PI,true);
+		//context.arc(x,y,r,sAngle,eAngle,counterclockwise);
+		//hudCTX.arc(0,300,55,0,-HUD.awesome*0.5*Math.PI,true);
+		
+		hudCTX.arc(480,0,55,0.5*Math.PI,-(1.5-HUD.awesome)*Math.PI,false);
+
 	    hudCTX.lineWidth = 10;
 	    hudCTX.strokeStyle = "#FFF";
 	    hudCTX.stroke();
     }
 	
-
-
 
 }
 
