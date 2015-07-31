@@ -165,42 +165,56 @@
         //function alert(){} // Mutes alerts.
 
 
+        function fullScreen(){
+            var viewportWidth = window.innerWidth;
+            var viewportHeight = window.innerHeight;
+            var ratioW = (1+(1 - 480/viewportWidth)+0.08).toFixed(2);
+            var ratioH = (1+(1 - 300/viewportHeight)+0.04).toFixed(2);
+            //console.log(ratioW,',',ratioH);
+            var xPosition = (viewportWidth-480)/2;
+            //var yPostiion = (viewportHeight-300)/2-10;
 
-        var viewportWidth = window.innerWidth;
-        var viewportHeight = window.innerHeight;
-        var ratioW = (1+(1 - 480/viewportWidth)+0.08).toFixed(2);
-        var ratioH = (1+(1 - 300/viewportHeight)+0.04).toFixed(2);
-        //console.log(ratioW,',',ratioH);
-        var xPosition = (viewportWidth-480)/2;
-        //var yPostiion = (viewportHeight-300)/2-10;
+            var translateValue = "transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);"+
+                                "-webkit-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);"+
+                                "-moz-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);"+
+                                "-o-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);"+
+                                "-ms-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);";
 
-		var translateValue = "transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);"+
-							"-webkit-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);"+
-							"-moz-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);"+
-							"-o-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);"+
-							"-ms-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);";
-
-        document.getElementById('content').setAttribute('style',translateValue);
-
-        
-        PWG.loadArtAssets();
-
-        function chkOrientation(){
-
-	         if(window.innerHeight > window.innerWidth){
-			    alert("Please use Landscape! 请使用横屏");
-			} 
-     
+            document.getElementById('content').setAttribute('style',translateValue);            
         }
-        
-		chkOrientation();
-         
+
+
+        PWG.loadArtAssets();
+        PWG.init();         
+
         window.onresize = function(event) {
 
-            PWG.init();         
-        };
+            alert('test resize');
+            if(window.innerHeight > window.innerWidth){
+                alert("Please use Landscape! 请使用横屏");
+                PWG.pauseGame();
 
-        PWG.init();         
+            }
+
+            //if(pony.startMoving){
+            //PWG.init();
+            //PWG.startTheGame();
+            //}
+
+
+        };        
+
+        if(window.innerHeight > window.innerWidth){
+            alert("Please use Landscape! 请使用横屏");
+        }else {
+            fullScreen();
+            PWG.init();         
+        }
+
+
+         
+
+
 
 
         </script>
