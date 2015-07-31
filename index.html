@@ -191,13 +191,18 @@
             //alert('test resize');
             if (window.innerHeight > window.innerWidth) {
                 //alert("Please use Landscape! 请使用横屏");
-                PWG.pauseGame();
+                // PWG.pauseGame();
 
             } else {
-                PWG.loadArtAssets();
-                PWG.init();
-                PWG.startTheGame();
-                fullScreen();
+                if (pony.startMoving == false) {
+                    console.log('not moving')
+                    PWG.loadArtAssets();
+                    PWG.init();
+
+                    fullScreen();
+
+                }
+
             }
 
             //if(pony.startMoving){
