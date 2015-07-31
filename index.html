@@ -182,25 +182,25 @@
 
         document.getElementById('content').setAttribute('style',translateValue);
 
+        
+        PWG.loadArtAssets();
 
-        function chkOrientation(loadLib){
+        function chkOrientation(){
 
 	         if(window.innerHeight > window.innerWidth){
 			    alert("Please use Landscape! 请使用横屏");
 			} 
-			    
-			PWG.loadArtAssets();
-		    PWG.init();			
-     	
+     
         }
-
         
 		chkOrientation();
-        
+         
         window.onresize = function(event) {
 
-                chkOrientation();
+            PWG.init();         
         };
+
+        PWG.init();         
 
 
         </script>
