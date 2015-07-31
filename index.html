@@ -195,9 +195,11 @@
                 PWG.pauseGame();
 
             }else {
-                fullScreen();
+                PWG.loadArtAssets();
                 PWG.init(); 
-            }
+                PWG.startTheGame();
+                fullScreen();
+           }
 
             //if(pony.startMoving){
             //PWG.init();
@@ -207,8 +209,11 @@
 
         };        
 
+
         if(window.innerHeight > window.innerWidth){
-            alert("Please use Landscape! 请使用横屏");
+            //alert("Please use Landscape! 请使用横屏");
+            PWG.pauseGame();
+
         }else {
             PWG.loadArtAssets();
             PWG.init();         
