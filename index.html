@@ -185,8 +185,6 @@
         }
 
 
-        PWG.loadArtAssets();
-        PWG.init();         
 
         window.onresize = function(event) {
 
@@ -198,8 +196,7 @@
 
             }else {
                 fullScreen();
-                 PWG.init();         
-
+                PWG.init(); 
             }
 
             //if(pony.startMoving){
@@ -213,8 +210,9 @@
         if(window.innerHeight > window.innerWidth){
             alert("Please use Landscape! 请使用横屏");
         }else {
-            fullScreen();
+            PWG.loadArtAssets();
             PWG.init();         
+            fullScreen();
         }
 
 
