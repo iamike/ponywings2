@@ -166,6 +166,7 @@
 
 
         function fullScreen(){
+
             var viewportWidth = window.innerWidth;
             var viewportHeight = window.innerHeight;
             var ratioW = (1+(1 - 480/viewportWidth)+0.08).toFixed(2);
@@ -180,7 +181,7 @@
                                 "-o-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);"+
                                 "-ms-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);";
 
-            //document.getElementById('content').setAttribute('style',translateValue);            
+            document.getElementById('content').setAttribute('style',translateValue);            
         }
 
 
