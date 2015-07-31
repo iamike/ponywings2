@@ -73,8 +73,8 @@
                                             <div>
                                                 <span id='title'><br>PLAY ME as a FULLSCREEN APP<br></span>
                                                 <span style='font-size:12px;'>
-														Open up your mobile browser's menu below<br>And select Add to Home Screen
-													</span>
+                                                        Open up your mobile browser's menu below<br>And select Add to Home Screen
+                                                    </span>
                                             </div>
                                         </div>
                                     </div>
@@ -102,29 +102,29 @@
                                         </div>
                                         <div class='stats' id='yougotta'>
                                             <!-- FACEBOOK 
-												<div class='gotta_button social' style='margin-right:-3px'>
-													<div id='fb-root'></div>
-													<div class='fb-like' data-href='http://ponywings.nutcasenightmare.com' data-send='false' data-layout='box_count' data-width='50' data-show-faces='false'></div>
-												</div>-->
+                                                <div class='gotta_button social' style='margin-right:-3px'>
+                                                    <div id='fb-root'></div>
+                                                    <div class='fb-like' data-href='http://ponywings.nutcasenightmare.com' data-send='false' data-layout='box_count' data-width='50' data-show-faces='false'></div>
+                                                </div>-->
                                             <!-- TWITTER 
-												<div class='gotta_button social' style='margin-right:3px'>
-													<a href='https://twitter.com/share' class='twitter-share-button' id='twitter_thing'
-														data-url='http://ponywings.nutcasenightmare.com' 
-														data-text='Today I roller-scooted and flew across the hills of Equestria! Play Pony Wings:' 
-														data-count='vertical'
-														data-via='ncasenmare'>Tweet</a>
-												</div>-->
+                                                <div class='gotta_button social' style='margin-right:3px'>
+                                                    <a href='https://twitter.com/share' class='twitter-share-button' id='twitter_thing'
+                                                        data-url='http://ponywings.nutcasenightmare.com' 
+                                                        data-text='Today I roller-scooted and flew across the hills of Equestria! Play Pony Wings:' 
+                                                        data-count='vertical'
+                                                        data-via='ncasenmare'>Tweet</a>
+                                                </div>-->
                                             <!-- GOOGLE 
-												<div class='gotta_button social'>-->
+                                                <div class='gotta_button social'>-->
                                             <!-- Place this tag where you want the +1 button to render 
-													<g:plusone size='tall'></g:plusone>
-												</div>-->
+                                                    <g:plusone size='tall'></g:plusone>
+                                                </div>-->
                                             <!-- THE SITE -->
                                             <a href='http://ponywings.nutcasenightmare.com'>
                                                 <img src='art/icon/PonyWingsSite.png' width='60' height='60' class='gotta_button' />
                                             </a>
                                             <!-- EMBED 
-												<div class='gotta_button' id='gb_embed'></div>-->
+                                                <div class='gotta_button' id='gb_embed'></div>-->
                                             <!-- MOBILE -->
                                             <a href='http://ponywings.nutcasenightmare.com'>
                                                 <div class='gotta_button' id='gb_mobile' style='margin-right:0px'></div>
@@ -165,23 +165,23 @@
         //function alert(){} // Mutes alerts.
 
 
-        function fullScreen(){
+        function fullScreen() {
 
             var viewportWidth = window.innerWidth;
             var viewportHeight = window.innerHeight;
-            var ratioW = (1+(1 - 480/viewportWidth)+0.08).toFixed(2);
-            var ratioH = (1+(1 - 300/viewportHeight)+0.04).toFixed(2);
+            var ratioW = (1 + (1 - 480 / viewportWidth) + 0.08).toFixed(2);
+            var ratioH = (1 + (1 - 300 / viewportHeight) + 0.04).toFixed(2);
             //console.log(ratioW,',',ratioH);
-            var xPosition = (viewportWidth-480)/2;
+            var xPosition = (viewportWidth - 480) / 2;
             //var yPostiion = (viewportHeight-300)/2-10;
 
-            var translateValue = "transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);"+
-                                "-webkit-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);"+
-                                "-moz-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);"+
-                                "-o-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);"+
-                                "-ms-transform: rotate(0deg) scale("+ratioW+","+ratioH+") skew(0deg) translate("+xPosition+"px,"+0+"px);";
+            var translateValue = "transform: rotate(0deg) scale(" + ratioW + "," + ratioH + ") skew(0deg) translate(" + xPosition + "px," + 0 + "px);" +
+                "-webkit-transform: rotate(0deg) scale(" + ratioW + "," + ratioH + ") skew(0deg) translate(" + xPosition + "px," + 0 + "px);" +
+                "-moz-transform: rotate(0deg) scale(" + ratioW + "," + ratioH + ") skew(0deg) translate(" + xPosition + "px," + 0 + "px);" +
+                "-o-transform: rotate(0deg) scale(" + ratioW + "," + ratioH + ") skew(0deg) translate(" + xPosition + "px," + 0 + "px);" +
+                "-ms-transform: rotate(0deg) scale(" + ratioW + "," + ratioH + ") skew(0deg) translate(" + xPosition + "px," + 0 + "px);";
 
-            document.getElementById('content').setAttribute('style',translateValue);            
+            document.getElementById('content').setAttribute('style', translateValue);
         }
 
 
@@ -189,17 +189,16 @@
         window.onresize = function(event) {
 
             //alert('test resize');
-            document.getElementById('content').setAttribute('style',"");
-            if(window.innerHeight > window.innerWidth){
+            if (window.innerHeight > window.innerWidth) {
                 //alert("Please use Landscape! 请使用横屏");
                 PWG.pauseGame();
 
-            }else {
+            } else {
                 PWG.loadArtAssets();
-                PWG.init(); 
+                PWG.init();
                 PWG.startTheGame();
                 fullScreen();
-           }
+            }
 
             //if(pony.startMoving){
             //PWG.init();
@@ -207,25 +206,17 @@
             //}
 
 
-        };        
+        };
 
 
-        if(window.innerHeight > window.innerWidth){
+        if (window.innerHeight > window.innerWidth) {
             //alert("Please use Landscape! 请使用横屏");
-            PWG.pauseGame();
 
-        }else {
+        } else {
             PWG.loadArtAssets();
-            PWG.init();         
+            PWG.init();
             fullScreen();
         }
-
-
-         
-
-
-
-
         </script>
     </div>
 </body>
