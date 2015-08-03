@@ -22,9 +22,9 @@ terrain.newNode = function()
 	terrain.nodes[terrain.nodes.length-1].x = terrain.nodes[terrain.nodes.length-2].x + Math.random()*150*0.2+250;
 
 	if(terrain.nodes[terrain.nodes.length-2].y<130){
-		terrain.nodes[terrain.nodes.length-1].y = 300+Math.random()*70*1.8;
+		terrain.nodes[terrain.nodes.length-1].y = 280+Math.random()*70;//200原始值
 	}else{
-		terrain.nodes[terrain.nodes.length-1].y = 30-Math.random()*70*1.8;
+		terrain.nodes[terrain.nodes.length-1].y = 80-Math.random()*70;//130原始值
 	}
 }
 
