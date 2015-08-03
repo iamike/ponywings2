@@ -67,13 +67,13 @@ terrain.draw = function( starttt )
 	// Later, ALL HEX?
 	ctx.lineWidth = 50;
 	if(gameIsMobile){
-		ctx.strokeStyle = "rgb(170,200,47)"; // Top
-		ctx.fillStyle = "rgb(152,179,43)"; // Middle
+		ctx.strokeStyle = "rgb(255,255,0)"; // Top
+		ctx.fillStyle = "rgb(255,222,0)"; // Middle
 		terrain.drawFrom(starttt,25);
 	}else{
-		ctx.strokeStyle = "rgb(170,200,47)"; // Top
+		ctx.strokeStyle = "rgb(255,255,0)"; // Top
 		terrain.drawFrom(starttt,25);
-		ctx.strokeStyle = "rgb(152,179,43)"; // Middle
+		ctx.strokeStyle = "rgb(255,222,0)";; // Middle
 		ctx.fillStyle = "#8FA927"; // Bottom 
 		terrain.drawFrom(starttt,70);
 	}
