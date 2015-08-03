@@ -13,9 +13,9 @@ prop.init = function(){
 		prop.trees = [{},{},{},{},{},{},{}];
 		prop.treeLength = 3;
 		prop.treePast = 1000;
-		pony.coord.x -= 800;
+		pony.coord.x -= 1800;
 		prop.addTrees();
-		pony.coord.x += 800;
+		pony.coord.x += 1800;
 	}
 	
 	// PARASPRITES

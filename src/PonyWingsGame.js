@@ -61,6 +61,8 @@ PWG.draw = function(){
 	prop.drawParasprites(); // Parasprites
 	HUD.draw(); // HUD
 	
+	Mouth.draw();//Mouth
+
 	// RESTORE
 	ctx.restore();
 	
@@ -76,6 +78,7 @@ PWG.init = function(){
 	pony.init();
 	terrain.init();
 	prop.init();
+
 }
 
 PWG.artAssets = 7;
@@ -91,6 +94,7 @@ PWG.loadArtAssets = function(){
 	prop.image.parasprite.onload = 
 	prop.image.burst.onload = 
 	HUD.timerImage.onload = 
+	Mouth.image.onload =
 		PWG.onAssetLoad;
 	
 	pony.image.src = "art/Scootaloo.png";
@@ -98,7 +102,9 @@ PWG.loadArtAssets = function(){
 	HUD.timerImage.src = "art/Timer.png";
 	HUD.timerImageUp.src = "art/timerUp.png";
 	HUD.timerImageDown.src = "art/timerDown.png";
-		
+	
+	Mouth.image.src = "art/mouth.png";
+
 	if(!gameIsMobile){
 		background.cloud.src = "art/Cloud.png";
 		prop.image.tree.src = "art/Tree.png";

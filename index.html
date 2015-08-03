@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div id="hud_screen">
-                <div style="position:absolute;top:0;right:60px;margin:10px;width:150px">
+                <div style="position:absolute;top:0;right:220px;margin:10px;width:150px">
                     <div class="hud_button" id="breset" ontouchstart="if(pony.startMoving){PWG.pauseGame();PWG.init();PWG.startTheGame();}" onclick='if(pony.startMoving){PWG.pauseGame();PWG.init();PWG.startTheGame();}'></div>
                     <div class="hud_button" id="bmusic" ontouchstart='menu.toggleAudio();' onclick='menu.toggleAudio();'></div>
                     <div class="hud_button" id="bpause" ontouchstart='menu.togglePause();' onclick='menu.togglePause();'></div>
@@ -164,6 +164,8 @@
         ctx = canvas.getContext('2d');
         hudCanvas = document.getElementById('hud');
         hudCTX = hudCanvas.getContext('2d');
+        mouthCanvas = document.getElementById('mouth');
+        mouthCTX =mouthCanvas.getContext('2d');
         //function alert(){} // Mutes alerts.
 
 
