@@ -97,7 +97,7 @@ pony.enterFrame = function()
 					//pony.vel.x += 0.05; 
 				}else{
 					//pony.vel.y -= 0.05; 
-					pony.vel.x += 0.9; 
+					pony.vel.x += 0.6; 
 					//原始值0.2
 					//pony.vel.x += 0.1; //Should just be pushing fwd
 				}
