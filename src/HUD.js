@@ -21,17 +21,17 @@ HUD.draw = function(){
 	//console.log(HUD.timer);
 
 	// Draw Night
-	if(HUD.timer<0.2){
-		hudCTX.save();
-		hudCTX.fillStyle = "#003";
-		if(HUD.timer>0){
-			hudCTX.globalAlpha = 0.8*(0.2-HUD.timer)/0.2;
-		}else{
-			hudCTX.globalAlpha = 0.8;
-		}
-		hudCTX.fillRect(0,0,480,300);
-		hudCTX.restore();
-	}
+	// if(HUD.timer<0.2){
+	// 	hudCTX.save();
+	// 	hudCTX.fillStyle = "#003";
+	// 	if(HUD.timer>0){
+	// 		hudCTX.globalAlpha = 0.8*(0.2-HUD.timer)/0.2;
+	// 	}else{
+	// 		hudCTX.globalAlpha = 0.8;
+	// 	}
+	// 	hudCTX.fillRect(0,0,480,300);
+	// 	hudCTX.restore();
+	// }
 			
 	// Draw Outer Circle
 	hudCTX.fillStyle = "#333";
@@ -52,7 +52,6 @@ HUD.draw = function(){
 	hudCTX.restore();
 	
 
-	// Draw Mouth
 		
 	// Draw Arc
 	if(HUD.awesome>=0){

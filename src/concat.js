@@ -42,6 +42,7 @@ background.draw = function()
 		ctx.globalAlpha = 0.8;
 		var i;
 		for(i=0;i<background.clouds.length;i++){
+			
 			ctx.drawImage( background.cloud, background.clouds[i].x, background.clouds[i].y, background.cloud.width*2, background.cloud.height*2);
 		}
 		ctx.restore();

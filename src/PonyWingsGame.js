@@ -95,15 +95,24 @@ PWG.loadArtAssets = function(){
 	prop.image.burst.onload = 
 	HUD.timerImage.onload = 
 	Mouth.image.onload =
+	Mouth.mouthUp.onload =
+	Mouth.mouthDown.onload =
+	//terrain.chipImage.onload = 
 		PWG.onAssetLoad;
 	
+
+
+
 	pony.image.src = "art/Scootaloo.png";
 	prop.image.parasprite.src = "art/Parasprite.png";
 	HUD.timerImage.src = "art/Timer.png";
-	HUD.timerImageUp.src = "art/timerUp.png";
-	HUD.timerImageDown.src = "art/timerDown.png";
+	Mouth.mouthUp.src = "art/mouthUp.png";
+	Mouth.mouthDown.src = "art/mouthDown.png";
 	
 	Mouth.image.src = "art/mouth.png";
+
+	//薯片材质
+	//terrain.chipImage.src = "art/chip.jpg";
 
 	if(!gameIsMobile){
 		background.cloud.src = "art/Cloud.png";
@@ -137,6 +146,9 @@ PWG.onAssetLoad = function(){
 		gameIsLoaded = true;
 		
 		PWG.startTheGame();
+
+
+
 	}
 }
 PWG.startTheGame = function(){
