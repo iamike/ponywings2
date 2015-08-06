@@ -97,7 +97,7 @@ PWG.loadArtAssets = function(){
 	prop.image.parasprite.onload = 
 	prop.image.burst.onload = 
 	HUD.timerImage.onload = 
-	Mouth.image.onload =
+	//Mouth.image.onload =
 	Mouth.mouthUp.onload =
 	Mouth.mouthDown.onload =
 	terrain.chipImage.onload = 
@@ -112,7 +112,7 @@ PWG.loadArtAssets = function(){
 	HUD.timerImage.src = "art/Timer.png";
 	Mouth.mouthUp.src = "art/mouthUp.png";
 	Mouth.mouthDown.src = "art/mouthDown.png";
-	Mouth.image.src = "art/mouth.png";
+	// Mouth.image.src = "art/mouth.png";
 
 	//薯片材质
 	terrain.chipImage.src = "art/chip.jpg";
