@@ -69,7 +69,7 @@ terrain.draw = function( starttt )
     //ctx.save();
 	// Later, ALL HEX?
 	//console.log();
-	ctx.lineWidth = 60;
+	ctx.lineWidth = 70;
 
 
 	if(gameIsMobile){
@@ -114,7 +114,7 @@ terrain.drawFrom = function( starttt, yOff )
 			}
 		}else{
 			if(PWG.gScale<0.35){
-				console.log('0');
+				//console.log('0');
 
 				for( i=30-terrain.drawFarBack; i<=1440; i+=30 ){
 					tmpTerrYDraw = terrain.funct(starttt+i);
