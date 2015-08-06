@@ -1,5 +1,5 @@
 var terrain = {};
-terrain.chipImage = new Image(1400,1000);
+terrain.chipImage = new Image(90,90);
 // terrain.chipImagePattern = ctx.createPattern(terrain.chipImage, 'repeat');
 
 terrain.init = function()
@@ -79,8 +79,8 @@ terrain.draw = function( starttt )
 	}else{
 		//ctx.strokeStyle = "rgb(255,255,0)"; // Top
 		//terrain.drawFrom(starttt,25);
-
-		ctx.strokeStyle =ctx.createPattern(terrain.chipImage, 'repeat-x'); // Middle
+		//ctx.strokeStyle = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+		ctx.strokeStyle =ctx.createPattern(terrain.chipImage, 'repeat'); // Middle
 		//ctx.save();
 		//ctx.fillStyle = "#8FA927"; // Bottom 
 		terrain.drawFrom(starttt,10);
@@ -101,12 +101,14 @@ terrain.drawFrom = function( starttt, yOff )
 			if(PWG.gScale<0.35){
 				for( i=30-terrain.drawFarBack; i<=1440; i+=75 ){
 					tmpTerrYDraw = terrain.funct(starttt+i);
+					// ctx.translate(i,0);
 					ctx.lineTo( i, tmpTerrYDraw+yOff );
 				}
 			}else{
 
 				for( i=30-terrain.drawFarBack; i<=1200; i+=50 ){
 					tmpTerrYDraw = terrain.funct(starttt+i);
+					// ctx.translate(i,0);
 					ctx.lineTo( i, tmpTerrYDraw+yOff );
 				}
 			}
@@ -116,21 +118,16 @@ terrain.drawFrom = function( starttt, yOff )
 
 				for( i=30-terrain.drawFarBack; i<=1440; i+=30 ){
 					tmpTerrYDraw = terrain.funct(starttt+i);
-					//ctx.moveTo( i+10, tmpTerrYDraw+yOff );
-					ctx.save();
+					//ctx.translate(i,0);
 					ctx.lineTo( i, tmpTerrYDraw+yOff );
-					ctx.translate(-pony.coord.x,0);
-					ctx.restore();
 				}
 			}else{
 				//console.log('1');
 
 				for( i=30-terrain.drawFarBack; i<=1200; i+=20 ){
 					tmpTerrYDraw = terrain.funct(starttt+i);
-					ctx.save();
+					//ctx.translate(i,0);
 					ctx.lineTo( i, tmpTerrYDraw+yOff );
-					ctx.translate(-pony.coord.x,0);
-					ctx.restore();
 				}
 			}
 		}
@@ -140,6 +137,7 @@ terrain.drawFrom = function( starttt, yOff )
 
 			for( i=30-terrain.drawFarBack; i<=500; i+=30 ){
 				tmpTerrYDraw = terrain.funct(starttt+i);
+				// ctx.translate(i,0);
 				ctx.lineTo( i, tmpTerrYDraw+yOff );
 			}
 		}else{
@@ -147,6 +145,7 @@ terrain.drawFrom = function( starttt, yOff )
 
 			for( i=30-terrain.drawFarBack; i<=500; i+=10 ){
 				tmpTerrYDraw = terrain.funct(starttt+i);
+				// ctx.translate(i,0);
 				ctx.lineTo( i, tmpTerrYDraw+yOff );
 			}
 		}
