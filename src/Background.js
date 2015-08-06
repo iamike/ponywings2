@@ -6,7 +6,7 @@ background.init = function(){
 	
 	
 	if(!gameIsMobile){
-		background.moutains = [{"x":0,"y":-250,"velX":1},{"x":0,"y":-200,"velX":3}];
+		background.moutains = [{"x":0,"y":-250,"velX":1},{"x":-100,"y":-200,"velX":3}];
 		background.clouds = [{"x":675,"y":-250,"velX":1},{"x":0,"y":-500,"velX":2},{"x":1000,"y":-750,"velX":3}];
 	}
 }
@@ -27,7 +27,7 @@ background.enterFrame = function()
 			background.moutains[i].x -= background.moutains[i].velX;
 
 			if(background.moutains[i].x<-1440){
-				background.moutains[i].x = 1440;
+				background.moutains[i].x = 1000;
 			}
 		}
 
