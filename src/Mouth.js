@@ -10,7 +10,7 @@ Mouth.draw = function(){
 
 	//mouthCTX.mouthDown = [{"x":0,"y":-250,"velX":1},{"x":-100,"y":-200,"velX":3}];
 
-	console.log(Math.abs(Math.sin(HUD.timer*1000)));
+	//console.log(Math.abs(Math.sin(HUD.timer*1000)));
 	mouthCTX.clearRect(0,0,960,640);
 	//hudCTX.restore();
 	//console.log(HUD.awesome);
@@ -43,8 +43,8 @@ Mouth.draw = function(){
 				mouthCTX.scale(0.6,0.6);
 				mouthCTX.translate(-260,400);
 				mouthCTX.rotate(-0.2*Math.PI);
-				mouthCTX.drawImage( Mouth.mouthDown, -8, 270-270*0.1*Math.abs(Math.sin(HUD.timer*1000)), 296, 279 );
-				mouthCTX.drawImage( Mouth.mouthUp, 0, 0, 296, 279 );
+				mouthCTX.drawImage( Mouth.mouthDown, -8, 270*(1-0.05*Math.abs(Math.sin(HUD.timer*1000))), 296, 279 );
+				mouthCTX.drawImage( Mouth.mouthUp, 0, -10*(1-0.5*Math.abs(Math.sin(HUD.timer*1000))), 296, 279 );
 				mouthCTX.restore();
 
 			} else if (pony.coord.y<-100){
@@ -55,16 +55,16 @@ Mouth.draw = function(){
 				mouthCTX.scale(0.6,0.6);
 				mouthCTX.translate(-260,300);
 				mouthCTX.rotate(-0.2*Math.PI);
-				mouthCTX.drawImage( Mouth.mouthDown, -8, 270-270*0.1*Math.abs(Math.sin(HUD.timer*1000)), 296, 279 );
-				mouthCTX.drawImage( Mouth.mouthUp, 0, 0, 296, 279 );
+				mouthCTX.drawImage( Mouth.mouthDown, -8, 270*(1-0.05*Math.abs(Math.sin(HUD.timer*1000))), 296, 279 );
+				mouthCTX.drawImage( Mouth.mouthUp, 0, -10*(1-0.5*Math.abs(Math.sin(HUD.timer*1000))), 296, 279 );
 				mouthCTX.restore();
 			}else{
 				//PWG.gScale += 0.40;
 				//console.log('PWG.gScale 0.4');
 				mouthCTX.save();
 				mouthCTX.translate(-200,-95);
-				mouthCTX.drawImage( Mouth.mouthDown, -8, 270-270*0.1*Math.abs(Math.sin(HUD.timer*1000)), 296, 279 );
-				mouthCTX.drawImage( Mouth.mouthUp, 0, 0, 296, 279 );
+				mouthCTX.drawImage( Mouth.mouthDown, -8, 270*(1-0.05*Math.abs(Math.sin(HUD.timer*1000))), 296, 279 );
+				mouthCTX.drawImage( Mouth.mouthUp, 0, -10*(1-0.5*Math.abs(Math.sin(HUD.timer*1000))), 296, 279 );
 				mouthCTX.restore();
 			}
 		}

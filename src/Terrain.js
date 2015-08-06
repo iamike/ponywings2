@@ -69,7 +69,7 @@ terrain.draw = function( starttt )
     //ctx.save();
 	// Later, ALL HEX?
 	//console.log();
-	ctx.lineWidth = 70;
+	ctx.lineWidth = 60;
 
 
 	if(gameIsMobile){
