@@ -17,6 +17,8 @@ PWG.enterFrame = function(){
 	
 	// SCALE / TRANSLATE DEPENDING ON PONY
 	if(pony.startMoving){
+		// PWG.gScale*=9;
+		// PWG.yDisp*=9;
 		PWG.gScale*=9;
 		PWG.yDisp*=9;
 		if(pony.coord.y<-100){

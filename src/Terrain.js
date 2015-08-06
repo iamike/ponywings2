@@ -4,7 +4,7 @@ terrain.chipImage = new Image(36,40);
 
 terrain.init = function()
 {
-	terrain.nodes = [ {"x":-200,"y":-50}, {"x":0,"y":-200}, {"x":300,"y":300}, {"x":700,"y":100} ];
+	terrain.nodes = [ {"x":-200,"y":00}, {"x":0,"y":00}, {"x":300,"y":300}, {"x":700,"y":100} ];
 	terrain.lastX = 2;
 	terrain.drawFarBack = 600;
 	var i;
@@ -66,11 +66,9 @@ terrain.functDiff = function(xx)
 
 terrain.draw = function( starttt )
 {
-    ctx.save();
 	// Later, ALL HEX?
 	//console.log();
 	ctx.lineWidth = 60;
-    //ctx.  ctx.translate( pony.coord.x/100, 0);
 
 
 	if(gameIsMobile){
@@ -83,10 +81,9 @@ terrain.draw = function( starttt )
 
 		ctx.strokeStyle =ctx.createPattern(terrain.chipImage, 'repeat'); // Middle
 		//ctx.fillStyle = "#8FA927"; // Bottom 
+		//ctx.moveTo(
 		terrain.drawFrom(starttt,10);
 	}
-
-	 ctx.restore();
 
 }
 
@@ -95,6 +92,7 @@ terrain.drawFrom = function( starttt, yOff )
 	ctx.beginPath();
 	var tmpTerrYDraw = terrain.funct(starttt-terrain.drawFarBack);
 	ctx.moveTo( 0-terrain.drawFarBack, tmpTerrYDraw+yOff );
+	//ctx.moveTo(pony.coord.x,tmpTerrYDraw+yOff );
 	var i;
 	if(pony.startMoving){
 		if(gameIsMobile){
@@ -104,36 +102,54 @@ terrain.drawFrom = function( starttt, yOff )
 					ctx.lineTo( i, tmpTerrYDraw+yOff );
 				}
 			}else{
+
 				for( i=30-terrain.drawFarBack; i<=1200; i+=50 ){
 					tmpTerrYDraw = terrain.funct(starttt+i);
 					ctx.lineTo( i, tmpTerrYDraw+yOff );
 				}
 			}
 		}else{
+	//ctx.save();
 			if(PWG.gScale<0.35){
+				console.log('0');
+
 				for( i=30-terrain.drawFarBack; i<=1440; i+=30 ){
 					tmpTerrYDraw = terrain.funct(starttt+i);
+					ctx.save();
+					//ctx.moveTo(i+11,tmpTerrYDraw+yOff );
 					ctx.lineTo( i, tmpTerrYDraw+yOff );
+					ctx.restore();
 				}
 			}else{
+				console.log('1');
+
 				for( i=30-terrain.drawFarBack; i<=1200; i+=20 ){
+
 					tmpTerrYDraw = terrain.funct(starttt+i);
+					ctx.save();
+					//ctx.moveTo(i+11,tmpTerrYDraw+yOff);
 					ctx.lineTo( i, tmpTerrYDraw+yOff );
+					ctx.restore();
 				}
 			}
 		}
 	}else{
 		if(gameIsMobile){
+			//console.log('1');
+
 			for( i=30-terrain.drawFarBack; i<=500; i+=30 ){
 				tmpTerrYDraw = terrain.funct(starttt+i);
 				ctx.lineTo( i, tmpTerrYDraw+yOff );
 			}
 		}else{
+			//console.log('11');
+
 			for( i=30-terrain.drawFarBack; i<=500; i+=10 ){
 				tmpTerrYDraw = terrain.funct(starttt+i);
 				ctx.lineTo( i, tmpTerrYDraw+yOff );
 			}
 		}
+
 	}
 	ctx.lineTo(1425,1000);
 	ctx.lineTo(0-terrain.drawFarBack,1000);
