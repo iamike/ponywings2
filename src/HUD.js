@@ -46,8 +46,7 @@ HUD.draw = function(){
 	//hudCTX.rotate((1-HUD.timer)*0.5*Math.PI);
 
 	hudCTX.drawImage( HUD.timerImage, -50, -50, 100, 100 );
-	// hudCTX.drawImage( HUD.timerImageUp, -70, 0, 100, 100 );
-	// hudCTX.drawImage( HUD.timerImageDown, -70, 230, 100, 100 );
+
 
 	hudCTX.restore();
 	

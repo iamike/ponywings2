@@ -14,7 +14,7 @@ prop.init = function(){
 		prop.treeLength = 3;
 		prop.treePast = 1000;
 		pony.coord.x -= 1800;
-		prop.addTrees();
+		//prop.addTrees();
 		pony.coord.x += 1800;
 	}
 	
@@ -91,7 +91,7 @@ prop.drawParasprites = function(){
 prop.enterFrame = function(){
 	if(!gameIsMobile){
 		if(prop.trees[prop.treeLength-1].x-pony.coord.x<-prop.treePast){
-			prop.addTrees();
+			//prop.addTrees();
 		}
 	}
 	var i;

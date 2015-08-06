@@ -12,7 +12,7 @@ Mouth.draw = function(){
 	//console.log(HUD.awesome);
 	// SCALE / TRANSLATE DEPENDING ON PONY
 
-	// Draw Sun & Moon
+	// Draw Mouth
 	mouthCTX.save();
 
 
@@ -31,12 +31,13 @@ Mouth.draw = function(){
 			//PWG.gScale += 0.7;
 			//PWG.yDisp += 100;
 			//console.log('gScale 0.7');
-			//console.log('yDisp 100');
+			//console.log('yDisp 100 pony die');
+
 		}else{
-			if (pony.coord.y<-300){
-				console.log('PWG.gScale 0.2');
+			if (pony.coord.y<-280){
+				//console.log('PWG.gScale 0.2');
 				mouthCTX.scale(0.6,0.6);
-				mouthCTX.translate(-260,430);
+				mouthCTX.translate(-260,400);
 				mouthCTX.rotate(-0.2*Math.PI);
 				mouthCTX.drawImage( Mouth.mouthDown, -8, 270, 296, 279 );
 				mouthCTX.drawImage( Mouth.mouthUp, 0, 0, 296, 279 );
@@ -44,7 +45,7 @@ Mouth.draw = function(){
 			} else if (pony.coord.y<-100){
 				//PWG.gScale += 0.30;
 				//console.log(pony.coord.y);
-				console.log('PWG.gScale 0.3');
+				//console.log('PWG.gScale 0.3');
 				mouthCTX.scale(0.6,0.6);
 				mouthCTX.translate(-260,300);
 				mouthCTX.rotate(-0.2*Math.PI);
@@ -53,7 +54,7 @@ Mouth.draw = function(){
 
 			}else{
 				//PWG.gScale += 0.40;
-				console.log('PWG.gScale 0.4');
+				//console.log('PWG.gScale 0.4');
 				mouthCTX.translate(-200,-95);
 				mouthCTX.drawImage( Mouth.mouthDown, -8, 270, 296, 279 );
 				mouthCTX.drawImage( Mouth.mouthUp, 0, 0, 296, 279 );

@@ -1,8 +1,10 @@
 var terrain = {};
+terrain.chipImage = new Image(36,40);
+// terrain.chipImagePattern = ctx.createPattern(terrain.chipImage, 'repeat');
 
 terrain.init = function()
 {
-	terrain.nodes = [ {"x":-200,"y":-50}, {"x":0,"y":-200}, {"x":400,"y":300}, {"x":700,"y":100} ];
+	terrain.nodes = [ {"x":-200,"y":-50}, {"x":0,"y":-200}, {"x":300,"y":300}, {"x":700,"y":100} ];
 	terrain.lastX = 2;
 	terrain.drawFarBack = 600;
 	var i;
@@ -64,8 +66,13 @@ terrain.functDiff = function(xx)
 
 terrain.draw = function( starttt )
 {
+    ctx.save();
 	// Later, ALL HEX?
-	ctx.lineWidth = 50;
+	//console.log();
+	ctx.lineWidth = 60;
+    //ctx.  ctx.translate( pony.coord.x/100, 0);
+
+
 	if(gameIsMobile){
 		ctx.strokeStyle = "rgb(255,255,0)"; // Top
 		ctx.fillStyle = "rgb(255,222,0)"; // Middle
@@ -73,10 +80,14 @@ terrain.draw = function( starttt )
 	}else{
 		ctx.strokeStyle = "rgb(255,255,0)"; // Top
 		terrain.drawFrom(starttt,25);
-		ctx.strokeStyle = "rgb(255,222,0)"; // Middle
-		ctx.fillStyle = "#8FA927"; // Bottom 
-		terrain.drawFrom(starttt,70);
+
+		ctx.strokeStyle =ctx.createPattern(terrain.chipImage, 'repeat'); // Middle
+		//ctx.fillStyle = "#8FA927"; // Bottom 
+		terrain.drawFrom(starttt,10);
 	}
+
+	 ctx.restore();
+
 }
 
 terrain.drawFrom = function( starttt, yOff )

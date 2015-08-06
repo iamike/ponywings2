@@ -90,6 +90,7 @@ PWG.loadArtAssets = function(){
 	
 	pony.image.onload =
 	background.cloud.onload = 
+	background.moutain.onload = 
 	prop.image.tree.onload = 
 	prop.image.parasprite.onload = 
 	prop.image.burst.onload = 
@@ -97,25 +98,26 @@ PWG.loadArtAssets = function(){
 	Mouth.image.onload =
 	Mouth.mouthUp.onload =
 	Mouth.mouthDown.onload =
-	//terrain.chipImage.onload = 
-		PWG.onAssetLoad;
+	terrain.chipImage.onload = 
+	PWG.onAssetLoad;
 	
 
 
-
+	background.cloud.src = "art/Cloud.png";
+	background.moutain.src = "art/moutain.png";
 	pony.image.src = "art/Scootaloo.png";
 	prop.image.parasprite.src = "art/Parasprite.png";
 	HUD.timerImage.src = "art/Timer.png";
 	Mouth.mouthUp.src = "art/mouthUp.png";
 	Mouth.mouthDown.src = "art/mouthDown.png";
-	
 	Mouth.image.src = "art/mouth.png";
 
 	//薯片材质
-	//terrain.chipImage.src = "art/chip.jpg";
+	terrain.chipImage.src = "art/chip.png";
 
 	if(!gameIsMobile){
 		background.cloud.src = "art/Cloud.png";
+		background.moutain.src = "art/moutain.png";
 		prop.image.tree.src = "art/Tree.png";
 		prop.image.burst.src = "art/Burst.png";
 		// Music

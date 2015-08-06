@@ -1,11 +1,13 @@
 var background = {};
 background.cloud = new Image(300,150);
+background.moutain = new Image(480,300);
 
 background.init = function(){
+	
+	
 	if(!gameIsMobile){
-		background.clouds = [{"x":675,"y":-250,"velX":1},
-					 {"x":0,"y":-500,"velX":2},
-					 {"x":1000,"y":-750,"velX":3}];
+		background.moutains = [{"x":0,"y":-250,"velX":1},{"x":0,"y":-200,"velX":3}];
+		background.clouds = [{"x":675,"y":-250,"velX":1},{"x":0,"y":-500,"velX":2},{"x":1000,"y":-750,"velX":3}];
 	}
 }
 
@@ -15,10 +17,20 @@ background.enterFrame = function()
 		var i;
 		for(i=0;i<background.clouds.length;i++){
 			background.clouds[i].x -= background.clouds[i].velX;
+
+
 			if(background.clouds[i].x<-1000){
 				background.clouds[i].x = 1425;
 			}
 		}
+		for(i=0;i<background.moutains.length;i++){
+			background.moutains[i].x -= background.moutains[i].velX;
+
+			if(background.moutains[i].x<-1440){
+				background.moutains[i].x = 1440;
+			}
+		}
+
 	}
 }
 
@@ -36,6 +48,18 @@ background.draw = function()
     ctx.stroke();
 	ctx.restore();
 	
+
+	//Background Mountain
+	if(!gameIsMobile){
+		ctx.save();
+		//ctx.globalAlpha = 0.8;
+		var i;
+		for(i=0;i<background.moutains.length;i++){
+			ctx.drawImage( background.moutain, background.moutains[i].x, background.moutains[i].y, background.moutain.width*3, background.moutain.height*3);
+		}
+		ctx.restore();
+	}
+
 	// Background Clouds
 	if(!gameIsMobile){
 		ctx.save();
@@ -46,4 +70,6 @@ background.draw = function()
 		}
 		ctx.restore();
 	}
+
+
 }

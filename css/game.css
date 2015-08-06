@@ -16,6 +16,7 @@ canvas, #background, #screen, #screen>div {
 img {
 	border:0;
 }
+
 #background {
 background: rgba(20,232,255,1);
 background: -moz-linear-gradient(top, rgba(20,232,255,1) 0%, rgba(150,243,199,1) 100%);
