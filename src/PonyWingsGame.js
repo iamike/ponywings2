@@ -115,7 +115,7 @@ PWG.loadArtAssets = function(){
 	Mouth.image.src = "art/mouth.png";
 
 	//薯片材质
-	terrain.chipImage.src = "art/chip.png";
+	terrain.chipImage.src = "art/chip.jpg";
 
 	if(!gameIsMobile){
 		background.cloud.src = "art/Cloud.png";

@@ -1,5 +1,5 @@
 var terrain = {};
-terrain.chipImage = new Image(36,40);
+terrain.chipImage = new Image(1400,1000);
 // terrain.chipImagePattern = ctx.createPattern(terrain.chipImage, 'repeat');
 
 terrain.init = function()
@@ -66,6 +66,7 @@ terrain.functDiff = function(xx)
 
 terrain.draw = function( starttt )
 {
+    //ctx.save();
 	// Later, ALL HEX?
 	//console.log();
 	ctx.lineWidth = 60;
@@ -76,14 +77,16 @@ terrain.draw = function( starttt )
 		ctx.fillStyle = "rgb(255,222,0)"; // Middle
 		terrain.drawFrom(starttt,25);
 	}else{
-		ctx.strokeStyle = "rgb(255,255,0)"; // Top
-		terrain.drawFrom(starttt,25);
+		//ctx.strokeStyle = "rgb(255,255,0)"; // Top
+		//terrain.drawFrom(starttt,25);
 
-		ctx.strokeStyle =ctx.createPattern(terrain.chipImage, 'repeat'); // Middle
+		ctx.strokeStyle =ctx.createPattern(terrain.chipImage, 'repeat-x'); // Middle
+		//ctx.save();
 		//ctx.fillStyle = "#8FA927"; // Bottom 
-		//ctx.moveTo(
 		terrain.drawFrom(starttt,10);
 	}
+
+	 //ctx.restore();
 
 }
 
@@ -92,7 +95,6 @@ terrain.drawFrom = function( starttt, yOff )
 	ctx.beginPath();
 	var tmpTerrYDraw = terrain.funct(starttt-terrain.drawFarBack);
 	ctx.moveTo( 0-terrain.drawFarBack, tmpTerrYDraw+yOff );
-	//ctx.moveTo(pony.coord.x,tmpTerrYDraw+yOff );
 	var i;
 	if(pony.startMoving){
 		if(gameIsMobile){
@@ -109,26 +111,25 @@ terrain.drawFrom = function( starttt, yOff )
 				}
 			}
 		}else{
-	//ctx.save();
 			if(PWG.gScale<0.35){
 				console.log('0');
 
 				for( i=30-terrain.drawFarBack; i<=1440; i+=30 ){
 					tmpTerrYDraw = terrain.funct(starttt+i);
+					//ctx.moveTo( i+10, tmpTerrYDraw+yOff );
 					ctx.save();
-					//ctx.moveTo(i+11,tmpTerrYDraw+yOff );
 					ctx.lineTo( i, tmpTerrYDraw+yOff );
+					ctx.translate(-pony.coord.x,0);
 					ctx.restore();
 				}
 			}else{
-				console.log('1');
+				//console.log('1');
 
 				for( i=30-terrain.drawFarBack; i<=1200; i+=20 ){
-
 					tmpTerrYDraw = terrain.funct(starttt+i);
 					ctx.save();
-					//ctx.moveTo(i+11,tmpTerrYDraw+yOff);
 					ctx.lineTo( i, tmpTerrYDraw+yOff );
+					ctx.translate(-pony.coord.x,0);
 					ctx.restore();
 				}
 			}
@@ -149,7 +150,6 @@ terrain.drawFrom = function( starttt, yOff )
 				ctx.lineTo( i, tmpTerrYDraw+yOff );
 			}
 		}
-
 	}
 	ctx.lineTo(1425,1000);
 	ctx.lineTo(0-terrain.drawFarBack,1000);
