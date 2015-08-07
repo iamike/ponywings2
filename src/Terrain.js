@@ -79,7 +79,17 @@ terrain.draw = function( starttt )
 	}else{
 		//ctx.strokeStyle = "rgb(255,255,0)"; // Top
 		//terrain.drawFrom(starttt,25);
-		ctx.strokeStyle = "rgb(255,255,0)";
+		//ctx.strokeStyle = "rgb(255,255,0)";
+		var grad= ctx.createLinearGradient(0, 0, 1000, 0);
+		grad.addColorStop(0, "#fab900");
+		grad.addColorStop(0.1, "#9a7200");
+		grad.addColorStop(0.3, "#fab900");
+		grad.addColorStop(0.6, "#fab900");
+		grad.addColorStop(0.7, "#9a7200");
+		grad.addColorStop(0.8, "#fab900");
+		grad.addColorStop(1, "#fab900");
+
+		ctx.strokeStyle = grad;
 		//ctx.strokeStyle =ctx.createPattern(terrain.chipImage, 'repeat'); // Middle
 		//ctx.save();
 		//ctx.fillStyle = "#8FA927"; // Bottom 
