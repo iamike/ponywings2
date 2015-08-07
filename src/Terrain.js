@@ -101,8 +101,8 @@ terrain.draw = function(starttt) {
 
         ctx.strokeStyle = grad2; // Top
         terrain.drawFrom(starttt, 25);
-        ctx.strokeStyle = grad;
-        //ctx.strokeStyle =ctx.createPattern(terrain.chipImage, 'repeat'); // Middle
+        //ctx.strokeStyle = grad;
+        ctx.strokeStyle =ctx.createPattern(terrain.chipImage, 'repeat'); // Middle
         //ctx.save();
         //ctx.fillStyle = "#8FA927"; // Bottom 
         terrain.drawFrom(starttt, 10);
