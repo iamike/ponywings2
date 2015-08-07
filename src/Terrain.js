@@ -82,10 +82,10 @@ terrain.draw = function( starttt )
 		//ctx.strokeStyle = "rgb(255,255,0)";
 		var grad= ctx.createLinearGradient(0, 0, 1000, 0);
 		grad.addColorStop(0, "#fab900");
-		grad.addColorStop(0.1, "#f3cd62");
+		grad.addColorStop(0.1, "#c39e34");
 		grad.addColorStop(0.3, "#fab900");
 		grad.addColorStop(0.6, "#fab900");
-		grad.addColorStop(0.7, "#f3cd62");
+		grad.addColorStop(0.7, "#c39e34");
 		grad.addColorStop(0.8, "#fab900");
 		grad.addColorStop(1, "#fab900");
 
