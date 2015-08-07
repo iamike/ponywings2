@@ -79,8 +79,8 @@ terrain.draw = function( starttt )
 	}else{
 		//ctx.strokeStyle = "rgb(255,255,0)"; // Top
 		//terrain.drawFrom(starttt,25);
-		//ctx.strokeStyle = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-		ctx.strokeStyle =ctx.createPattern(terrain.chipImage, 'repeat'); // Middle
+		ctx.strokeStyle = "rgb(255,255,0)";
+		//ctx.strokeStyle =ctx.createPattern(terrain.chipImage, 'repeat'); // Middle
 		//ctx.save();
 		//ctx.fillStyle = "#8FA927"; // Bottom 
 		terrain.drawFrom(starttt,10);
